@@ -320,12 +320,15 @@ class PipelineContracts(unittest.TestCase):
             self.assertFalse((Path(temp) / "submission.csv").exists())
 
     def test_cli_environment_paths(self):
+        source_data = ROOT / "data/official/data"
+        if not source_data.is_dir():
+            self.skipTest("official DACON data is intentionally absent from the public repository")
         with tempfile.TemporaryDirectory() as temp:
             base = Path(temp)
             data = base / "isolated_data"
             output = base / "isolated_output"
-            shutil.copytree(ROOT / "data/official/data", data, ignore=shutil.ignore_patterns("test.jsonl.gz"))
-            with gzip.open(ROOT / "data/official/data/test.jsonl.gz", "rt", encoding="utf-8") as f:
+            shutil.copytree(source_data, data, ignore=shutil.ignore_patterns("test.jsonl.gz"))
+            with gzip.open(source_data / "test.jsonl.gz", "rt", encoding="utf-8") as f:
                 rec = json.loads(next(f))
             rec["id"] = "contract-env-path-unique"
             with gzip.open(data / "test.jsonl.gz", "wt", encoding="utf-8") as f:
