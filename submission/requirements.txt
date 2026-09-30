@@ -1,0 +1,2 @@
+# The competition provides vllm==0.26.0, torch==2.11.0+cu130,
+# transformers==5.14.1 and xgrammar==0.2.3. No additional package is required.

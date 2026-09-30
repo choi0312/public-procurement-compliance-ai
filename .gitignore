@@ -1,0 +1,44 @@
+# Local competition data, model caches, run artifacts, and credentials.
+/data/
+/artifacts/
+/deliverables/
+/AGENTS.md
+**/__pycache__/
+**/*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Internal research notebooks/logs are kept locally.  The allowlisted public
+# documents below are written for this repository and contain no raw records.
+/docs/*
+!/docs/METHODOLOGY.md
+!/docs/EXPERIMENTS.md
+!/docs/REPRODUCIBILITY.md
+!/docs/IMPLEMENTATION_GUIDE.md
+
+# Operational Runpod/benchmark scripts include local paths and are deliberately
+# excluded from the public repository.  Keep only reproducibility utilities.
+/scripts/*
+!/scripts/evaluate.py
+!/scripts/package_submission.py
+!/scripts/test_submission_contract.py
+!/scripts/validate_packaged.py
+
+# Development examples contain rows derived from the competition data and are
+# inactive in the released configuration.  The frozen submission needs only the
+# two allowlisted static assets.
+/submission/model/*
+!/submission/model/config.json
+!/submission/model/item_guidance.json
+
+# Generated submission archives and reports are reproducible but not versioned.
+*.zip
+*.manifest.json
+submission.csv
+run_report.json
+model_outputs.json

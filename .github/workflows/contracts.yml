@@ -1,0 +1,23 @@
+name: public-contracts
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate offline submission contracts
+        run: python scripts/test_submission_contract.py
+      - name: Build and audit the deterministic ZIP
+        run: |
+          python scripts/package_submission.py --output /tmp/submission.zip
+          PPS_AUDIT_ZIP=/tmp/submission.zip python scripts/test_submission_contract.py
