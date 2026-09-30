@@ -4,7 +4,7 @@
 
 이 저장소의 `submission/`은 최신 `submission_sentinel.zip`의 33개 member를 풀어 놓은 것입니다. 공개 저장소에서는 다음을 제외합니다.
 
-- DACON 원본·파생 데이터와 dev 라벨
+- 대회 원본·파생 데이터와 dev 라벨
 - dev 예시와 provenance 자산
 - Gemma/BGE 모델 가중치와 cache
 - 모델 응답, 예측 CSV, 실행 artifact
@@ -34,7 +34,7 @@
 
 ## 데이터 배치
 
-DACON 배포 파일을 직접 내려받아 다음 환경변수를 지정합니다.
+대회 배포 파일을 직접 내려받아 다음 환경변수를 지정합니다.
 
 ```bash
 export PPS_DATA_DIR=/absolute/path/to/official/data

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Independent DACON submission contracts. stdlib only; no GPU/API calls.
+"""Independent submission contracts. stdlib only; no GPU/API calls.
 
 Run: python scripts/test_submission_contract.py
 Optional archive audit: PPS_AUDIT_ZIP=/absolute/submit.zip python scripts/test_submission_contract.py
@@ -322,7 +322,7 @@ class PipelineContracts(unittest.TestCase):
     def test_cli_environment_paths(self):
         source_data = ROOT / "data/official/data"
         if not source_data.is_dir():
-            self.skipTest("official DACON data is intentionally absent from the public repository")
+            self.skipTest("official competition data is intentionally absent from the public repository")
         with tempfile.TemporaryDirectory() as temp:
             base = Path(temp)
             data = base / "isolated_data"

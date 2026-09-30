@@ -93,4 +93,4 @@ OS 모델 page cache는 지우지 않았고 읽기 전용 cgroup 때문에 공�
 2. 항목별 양성이 적어 한두 건이 Macro F1을 크게 움직입니다.
 3. 공개 라벨에는 원문과 meta가 충돌하는 해석 노이즈가 있습니다.
 4. GPU kernel과 batching에 따른 출력 변동이 남았습니다.
-5. 최종 `sentinel` ZIP의 DACON LB는 확인되지 않았습니다.
+5. 최종 `sentinel` ZIP의 외부 평가 점수는 확인되지 않았습니다.
